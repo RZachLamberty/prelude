@@ -1,0 +1,67 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: zpy3
+# key: zpy3
+# contributor: zlamberty@achieveam.com
+# binding: direct-keybinding
+# --
+#!/usr/bin/env python3.4
+# -*- coding: utf-8 -*-
+
+"""
+Module: ${1:`(file-name-nondirectory (buffer-file-name))`}
+Author: zlamberty
+Created: ${2:`(format-time-string "%Y-%m-%d")`}
+
+Description:
+    $0
+
+Usage:
+    <usage>
+
+"""
+
+import advcommon.parse as argparse
+import advcommon.logging as logging
+
+
+# ----------------------------- #
+#   Module Constants            #
+# ----------------------------- #
+
+logger = logging.getLogger("$1")
+logger_conf = logging.Config(
+    application_name="$1",
+    log_filename="$1"
+).configure()
+
+
+# ----------------------------- #
+#   Main routine                #
+# ----------------------------- #
+
+def main():
+    """ docstring """
+    pass
+
+
+# ----------------------------- #
+#   Command line                #
+# ----------------------------- #
+
+def parse_args():
+    """ Take a log file from the commmand line """
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-x", "--xample", help="An Example", action='store_true')
+
+    args = parser.parse_args()
+
+    logger.debug("arguments set to {}".format(vars(args)))
+
+    return args
+
+
+if __name__ == '__main__':
+
+    args = parse_args()
+
+    main()

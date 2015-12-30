@@ -2,6 +2,16 @@
 [![Liberapay](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/bbatsov/donate)
 [![Patreon](https://img.shields.io/badge/patreon-donate-orange.svg)](https://www.patreon.com/bbatsov)
 
+Zach's Prelude
+==============
+This is merely a fork of the *amazing* prelude repo created by [bbatsov](https://github.com/bbatsov). Go give him your love.
+
+To install *MY* version, 
+
+```bash
+curl https://raw.githubusercontent.com/RZachLamberty/prelude/master/utils/installer.sh | sh
+```
+
 Emacs Prelude
 =============
 

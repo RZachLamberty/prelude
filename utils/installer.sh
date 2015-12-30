@@ -3,8 +3,10 @@ install_prelude () {
     if [ x$PRELUDE_VERBOSE != x ]
     then
         /usr/bin/env git clone $PRELUDE_URL "$PRELUDE_INSTALL_DIR"
+        cd $PRELUDE_INSTALL_DIR && /usr/bin/env git remote add upstream https://github.com/bbatsov/prelude.git
     else
         /usr/bin/env git clone $PRELUDE_URL "$PRELUDE_INSTALL_DIR" > /dev/null
+        cd $PRELUDE_INSTALL_DIR && /usr/bin/env git remote add upstream https://github.com/bbatsov/prelude.git
     fi
     if ! [ $? -eq 0 ]
     then
@@ -57,7 +59,7 @@ colors_ () {
 #   Enable colors
 # -s/--source [url]
 #   Clone prelude from 'url'.
-#   Defaults to 'https://github.com/bbatsov/prelude.git'
+#   Defaults to 'git@github.com:RZachLamberty/prelude.git'
 # -i/--into
 #   If one exists, install into the existing config
 # -n/--no-bytecompile
@@ -74,7 +76,7 @@ usage() {
     printf "  \t \t \t \t If 'dir' is a relative path prefix with $HOME.\n"
     printf "  \t \t \t \t Defaults to $HOME/.emacs.d\n"
     printf "  -s, --source [url] \t \t Clone prelude from 'url'.\n"
-    printf "  \t \t \t \t Defaults to 'https://github.com/bbatsov/prelude.git'.\n"
+    printf "  \t \t \t \t Defaults to 'git@github.com:RZachLamberty/prelude.git'.\n"
     printf "  -n, --no-bytecompile \t \t Skip the bytecompilation step of prelude.\n"
     printf "  -i, --into \t \t \t Install Prelude into a subdirectory in the existing configuration\n"
     printf "  \t \t \t \t The default behavious is to install prelude into the existing\n"
@@ -125,7 +127,7 @@ done
 
 VERBOSE_COLOR=$BBLUE
 
-[ -z "$PRELUDE_URL" ] && PRELUDE_URL="https://github.com/bbatsov/prelude.git"
+[ -z "$PRELUDE_URL" ] && PRELUDE_URL="git@github.com:RZachLamberty/prelude.git"
 [ -z "$PRELUDE_INSTALL_DIR" ] && PRELUDE_INSTALL_DIR="$HOME/.emacs.d"
 
 if [ x$PRELUDE_VERBOSE != x ]
