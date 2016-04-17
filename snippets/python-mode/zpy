@@ -1,7 +1,7 @@
 # -*- mode: snippet; require-final-newline: nil -*-
 # name: zpy
 # key: zpy
-# contributor: zlamberty@achieveam.com
+# contributor: r.zach.lamberty@gmail.com
 # binding: direct-keybinding
 # --
 #!/usr/bin/env python
@@ -20,19 +20,22 @@ Usage:
 
 """
 
-import advcommon.parse as argparse
-import advcommon.logging as logging
+import argparse
+import logging
+import logging.config
+import os
+import yaml
 
 
 # ----------------------------- #
 #   Module Constants            #
 # ----------------------------- #
 
-logger = logging.getLogger("$1")
-logger_conf = logging.Config(
-    application_name="$1",
-    log_filename="$1"
-).configure()
+HERE = os.path.dirname(os.path.realpath(__file__))
+logger = logging.getLogger("$0")
+LOGCONF = os.path.join(HERE, 'logging.yaml')
+with open(LOGCONF, 'rb') as f:
+    logging.config.dictConfig(yaml.load(f))
 
 
 # ----------------------------- #
@@ -40,7 +43,15 @@ logger_conf = logging.Config(
 # ----------------------------- #
 
 def main():
-    """ docstring """
+    """docstring
+
+    args:
+
+    returns:
+
+    raises:
+
+    """
     pass
 
 

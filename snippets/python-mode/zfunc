@@ -1,0 +1,20 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: zf
+# key: zf
+# contributor: r.zach.lamberty@gmail.com
+# binding: direct-keybinding
+# --
+def $0($1):
+    """$2
+
+    args:
+        $3
+
+    returns:
+        $4
+
+    raises:
+        $5
+
+    """
+    pass

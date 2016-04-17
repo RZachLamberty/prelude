@@ -1,0 +1,11 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: zlog
+# key: zlog
+# contributor: r.zach.lamberty@gmail.com
+# binding: direct-keybinding
+# --
+HERE = os.path.dirname(os.path.realpath(__file__))
+logger = logging.getLogger("$0")
+LOGCONF = os.path.join(HERE, 'logging.yaml')
+with open(LOGCONF, 'rb') as f:
+    logging.config.dictConfig(yaml.load(f))
