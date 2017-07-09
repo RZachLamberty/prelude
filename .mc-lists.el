@@ -5,17 +5,22 @@
       '(
         ace-jump-buffer
         beginning-of-buffer
+        crux-move-beginning-of-line
         easy-kill
+        electric-newline-and-maybe-indent
         ess-smart-comma
+        eval-print-last-sexp
         indent-for-tab-command
         kill-region
         markdown-enter-key
+        markdown-exdent-or-delete
         prelude-move-beginning-of-line
         sh-assignment
         sp-backward-delete-char
         sp-backward-kill-word
         sp-delete-char
         sp-kill-hybrid-sexp
+        sp-kill-region
         undo-tree-visualize
         yaml-electric-dash-and-dot
         ))
@@ -23,6 +28,8 @@
 (setq mc/cmds-to-run-once
       '(
         end-of-buffer
+        forward-sentence
+        pug-electric-backspace
         smex
         sp-remove-active-pair-overlay
         ))
